@@ -179,6 +179,9 @@ function draw(){
       }
 
     //changing bottles
+    if(scoreleft == 0){
+      playerleft.addImage(bottle1);
+    }
     if(scoreleft == 1){
       playerleft.addImage(broke);
     }
@@ -192,6 +195,9 @@ function draw(){
       playerleft.addImage(broke3);
     }
 
+    if(scoreright == 0){
+      playerright.addImage(bottle2);
+    }
     if(scoreright == 1){
       playerright.addImage(broke);
     }
