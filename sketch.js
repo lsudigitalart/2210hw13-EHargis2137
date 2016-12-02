@@ -1,8 +1,5 @@
 //Emily Hargis
 //Beer Pong
-//Open with Safari
-
-//also fix controls so that both bottles can move at the same time
 
  var playerleft, playerright, ball;
 
@@ -30,8 +27,6 @@ var py2 = 100;
 var ball, bottle1, bottle2, red, blue, title, gif;
 var bit, bit1, bit2, bit3, broke, broke1, broke2, broke3;
 
-var pa = [];
-
 var splash = 1;
 
 function preload(){
@@ -57,10 +52,7 @@ function preload(){
 
 function setup(){
   createCanvas(700, 650);
-  //background(table, 700,650);
-  //image(title, 350, 325, 700, 650);
   ellipseMode(RADIUS);
-  //pa[0] = new Particle(px, py);
 
    playerleft = createSprite(20, 60);
    playerright = createSprite(20, 60);
@@ -160,7 +152,6 @@ function draw(){
       ball.position.x = 350;
       ball.setSpeed(speed,random(-70, 70));
       scoreleft++;
-      //pa[pa.length] = new Particle(width/2-30, height/2-50, image(bit, 100, 100));
     }
     if(ball.position.x>width) {
       ball.position.x = 350;
