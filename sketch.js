@@ -19,8 +19,7 @@ var scoreright = 0;
 var directionsleft = "Controls:\n 'w' = up\n 's' = down";
 var directionsright = "Controls:\n up arrow = up\n down arrow = down";
 var score = 0;
-var leftwins = "Left Player Wins!";
-var rightwins = "Right Player Wins!";
+var win = "Game \n Over";
 
 var px = 100;
 var py = 100;
@@ -43,7 +42,7 @@ function preload(){
   red = loadImage('assets/red1.png');
   blue = loadImage('assets/blue1.png');
   title = loadImage('assets/title_screen5.png');
-  end = loadImage('assets/end_screen.png');
+  end = loadImage('assets/end_screen2.png');
 
   bit = loadImage('assets/bit.png');
   bit1 = loadImage('assets/bit1.png');
@@ -125,6 +124,7 @@ function draw(){
      playerleft.position.x = px;
      playerleft.position.y = py;
 
+     //adding the controls as their own functions made the player unable to control the bottles
      if(keyIsPressed){
        if(key == "w"){
          //println("forward");
@@ -215,17 +215,13 @@ function draw(){
     if(scoreleft == 5 || scoreright == 5){
       scoreleft = 0;
       scoreright = 0;
-      image(end, -80, 20, 800, 650)
-      // if(scoreleft == 5){
-      //   fill('white');
-      //   textSize(72);
-      //   text(leftwins, width/2-100, height/2);
-      // }
-      // if(scoreright == 5){
-      //   fill('white');
-      //   textSize(72);
-      //   text(rightwins, width/2-100, height/2);
-      // }
+      splash = 2;}
+
+    if(splash == 2){
+      image(end, -80, 0, 800, 750)
+      fill('white');
+      textSize(120);
+      text(win, width/2-50, height/2);
   }
 
    drawSprites();
